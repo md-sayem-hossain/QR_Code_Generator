@@ -12,18 +12,22 @@
                     pal : [ '#2c7dfa', '#fff' ]
                 }).svg(); 
                 div.appendChild(svgNode);  
-
-                // const svg = document.getElementById('qr-image').innerHTML;
-                // const blob = new Blob([svg.toString()]);
-                // const element = document.createElement("a");
-                // element.download = "Qr_Code.svg";
-                // element.href = window.URL.createObjectURL(blob);
-                // element.click();
-                // element.remove();
+                var element = $("#qr-image")[0];
+                html2canvas(element).then(function (canvas) {
+                    var myImage = canvas.toDataURL();
+                    downloadURI(myImage, "cartao-virtual.png");
+                });
             }
             else
             {
                 alert("Enter Text First !!!");
             }
-    });
+    }); 
+    function downloadURI(uri, name) {
+        var link = document.createElement("a"); 
+        link.download = name;
+        link.href = uri;
+        document.body.appendChild(link);
+        link.click();
+    }
   });
