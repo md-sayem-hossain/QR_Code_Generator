@@ -13,13 +13,13 @@
                 }).svg(); 
                 div.appendChild(svgNode);  
 
-                const svg = document.getElementById('qr-image').innerHTML;
-                const blob = new Blob([svg.toString()]);
-                const element = document.createElement("a");
-                element.download = "Qr_Code.png";
-                element.href = window.URL.createObjectURL(blob);
-                element.click();
-                element.remove();
+                // const svg = document.getElementById('qr-image').innerHTML;
+                // const blob = new Blob([svg.toString()]);
+                // const element = document.createElement("a");
+                // element.download = "Qr_Code.svg";
+                // element.href = window.URL.createObjectURL(blob);
+                // element.click();
+                // element.remove();
             }
             else
             {
